@@ -10,6 +10,10 @@ Inferno-Habitat, at the moment, is a local dependency in `src/lib` until I manag
     - SCSS
     - Typescript
 
+- Cleanup example component:
+    - Styling
+    - Include "output" props
+
 - Production build
     - Size optimization
     - Naming
