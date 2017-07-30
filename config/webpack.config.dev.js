@@ -55,6 +55,7 @@ module.exports = {
     // changing JS code would still trigger a refresh.
   ],
   output: {
+    libraryTarget: 'umd',
     // Next line is not used in dev but WebpackDevServer crashes without it:
     path: paths.appBuild,
     // Add /* filename */ comments to generated require()s in the output.
@@ -222,7 +223,7 @@ module.exports = {
     new InterpolateHtmlPlugin(env.raw),
     // Generates an `index.html` file with the <script> injected.
     new HtmlWebpackPlugin({
-      inject: true,
+      inject: false,
       template: paths.appHtml,
     }),
     // Add module names to factory functions so they appear in browser profiler.

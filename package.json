@@ -34,6 +34,7 @@
     "inferno-component": "^3.7.0",
     "inferno-dev-utils": "^3.2.0",
     "inferno-error-overlay": "^2.2.0",
+    "inferno-hyperscript": "^3.7.0",
     "jest": "20.0.4",
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "^3.0.0",

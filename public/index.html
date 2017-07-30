@@ -22,19 +22,15 @@
     <title>Inferno App</title>
   </head>
   <body>
-    <div id="app"></div>
-    <noscript>
-      You need to enable JavaScript to run this app.
-    </noscript>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <h2>Demo</h2>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+		<!-- that's how we embed the widget using habitat -->
+	  <div class="demo-box" id="widget-wrapper" data-prop-name="Luigi" data-prop-log="console.log">
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+			<!-- THAT IS ALL YOU NEED -->
+			<script async src="/static/js/bundle.js" type="text/javascript"></script>
+
+	  </div>
+		<!-- //end that's how we embed the widget using habitat -->
   </body>
 </html>

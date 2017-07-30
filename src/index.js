@@ -1,5 +1,10 @@
-import { render } from 'inferno';
-import App from './App';
-import './index.css';
+import habitat from './lib';
 
-render(<App />, document.getElementById('app'));
+function init() {
+  console.log('HABITAT', typeof habitat, habitat);
+  let Widget = require('./App').default;
+  let w = habitat(Widget);
+  w.render();
+}
+
+init();

@@ -22,3 +22,7 @@ yarn-error.log*
 
 *.orig
 package-lock.json
+
+# IDEs
+.vscode
+.idea
