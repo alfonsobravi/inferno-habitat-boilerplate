@@ -10,6 +10,7 @@
     "inferno-hyperscript": "^3.7.0"
   },
   "devDependencies": {
+    "@types/jest": "^20.0.7",
     "@types/node": "^8.0.22",
     "autoprefixer": "7.1.2",
     "babel-core": "6.25.0",
@@ -58,29 +59,30 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom",
+    "test": "node scripts/test.js --env=jsdom --no-cache",
     "lint": "tslint src/*.ts{,x} src/**/*.ts{,x}"
   },
   "jest": {
     "collectCoverageFrom": [
-      "src/**/*.{js,jsx}"
+      "src/**/*.{ts,tsx}"
     ],
     "setupFiles": [
       "<rootDir>/config/polyfills.js"
     ],
     "testMatch": [
-      "<rootDir>/src/**/__tests__/**/*.js?(x)",
-      "<rootDir>/src/**/?(*.)(spec|test).js?(x)"
+      "<rootDir>/src/**/__tests__/**/*.ts?(x)",
+      "<rootDir>/src/**/?(*.)(spec|test).ts?(x)"
     ],
     "testEnvironment": "node",
     "testURL": "http://localhost",
     "transform": {
       "^.+\\.(js|jsx)$": "<rootDir>/node_modules/babel-jest",
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
+      "^.+\\.(ts|tsx)$": "<rootDir>/config/jest/tsTransform.js",
       "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
     },
     "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$"
     ],
     "moduleNameMapper": {
       "^inferno-native$": "inferno-native-web"
@@ -90,7 +92,9 @@
       "js",
       "json",
       "web.jsx",
-      "jsx"
+      "jsx",
+      "ts",
+      "tsx"
     ]
   },
   "babel": {

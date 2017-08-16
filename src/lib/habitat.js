@@ -8,9 +8,9 @@ import h from 'inferno-hyperscript'
  * @return {String}     Capitalized string
  */
 const _capitalize = str => {
-  return str.replace(/-([a-z])/ig, (all, letter) => {
-    return letter.toUpperCase();
-  });
+    return str.replace(/-([a-z])/ig, (all, letter) => {
+        return letter.toUpperCase();
+    });
 };
 
 /**
@@ -19,11 +19,11 @@ const _capitalize = str => {
  * @return {HTMLElement}     [script Element]
  */
 const _getCurrentScriptTag = () => {
-  return document.currentScript ||
-    (() => {
-      let scripts = document.getElementsByTagName('script');
-      return scripts[scripts.length - 1];
-    })();
+    return document.currentScript ||
+        (() => {
+            let scripts = document.getElementsByTagName('script');
+            return scripts[scripts.length - 1];
+        })();
 };
 
 /**
@@ -32,25 +32,25 @@ const _getCurrentScriptTag = () => {
  * @return {Object}  props object to be passed to the component
  */
 const _propsToPassDown = (element) => {
-  let attrs = element.attributes;
-  let props = {};
+    let attrs = element.attributes;
+    let props = {};
 
-  // ceck for another props attached to the element
-  Object.keys(attrs).forEach(key => {
-    if (attrs.hasOwnProperty(key)) {
-      let dataAttrName = attrs[key].name;
-      if (!dataAttrName || typeof dataAttrName !== 'string') {
-        return false;
-      }
-      let propName = dataAttrName.split(/(data-props?-)/).pop();
-      propName = _capitalize(propName);
-      if (dataAttrName !== propName) {
-        let propValue = attrs[key].nodeValue;
-        props[propName] = propValue;
-      }
-    }
-  });
-  return props;
+    // ceck for another props attached to the element
+    Object.keys(attrs).forEach(key => {
+        if (attrs.hasOwnProperty(key)) {
+            let dataAttrName = attrs[key].name;
+            if (!dataAttrName || typeof dataAttrName !== 'string') {
+                return false;
+            }
+            let propName = dataAttrName.split(/(data-props?-)/).pop();
+            propName = _capitalize(propName);
+            if (dataAttrName !== propName) {
+                let propValue = attrs[key].nodeValue;
+                props[propName] = propValue;
+            }
+        }
+    });
+    return props;
 };
 
 /**
@@ -59,42 +59,43 @@ const _propsToPassDown = (element) => {
  * @param  {document} scope  Docuemnt object or DOM Element as a scope
  * @return {Array}        Array of matching habitats
  */
-const _hostDOMElms = ({ name = "data-widget", value = null, inline = true, clean = true } = {}) => {
-  let hostNodes = [];
-  let currentScript = _getCurrentScriptTag();
-  if (!value) {
-    // user did not specify where to mount - get it from script tag attributes
-    let scriptTagAttrs = currentScript.attributes;
-    // ceck for another props attached to the tag
-    Object.keys(scriptTagAttrs).forEach(key => {
-      if (scriptTagAttrs.hasOwnProperty(key)) {
-        const dataAttrName = scriptTagAttrs[key].name;
-        if (dataAttrName === 'data-mount') {
-          value = scriptTagAttrs[key].nodeValue;
+const _hostDOMElms = ({name = "data-widget", value = null, inline = true, clean = true} = {}) => {
+    let hostNodes = [];
+    let currentScript = _getCurrentScriptTag();
+    if (!value) {
+        // user did not specify where to mount - get it from script tag attributes
+        let scriptTagAttrs = currentScript.attributes;
+        // ceck for another props attached to the tag
+        Object.keys(scriptTagAttrs).forEach(key => {
+            if (scriptTagAttrs.hasOwnProperty(key)) {
+                const dataAttrName = scriptTagAttrs[key].name;
+                if (dataAttrName === 'data-mount') {
+                    value = scriptTagAttrs[key].nodeValue;
+                }
+            }
+        });
+    }
+    if (!value && inline) {
+        let node = currentScript.parentNode
+        if (clean) {
+            node.innerHTML = '';
         }
-      }
+        return [].concat(node);
+    }
+    [].forEach.call(document.querySelectorAll(`[${name}]`), queriedTag => {
+        if (value === queriedTag.getAttribute(name)) {
+            if (clean) {
+                queriedTag.innerHTML = '';
+            }
+            hostNodes.push(queriedTag);
+        }
     });
-  }
-  if (!value && inline) {
-    let node = currentScript.parentNode
-    if (clean) {
-      node.innerHTML = '';
-    }
-    return [].concat(node);
-  }
-  [].forEach.call(document.querySelectorAll(`[${name}]`), queriedTag => {
-    if (value === queriedTag.getAttribute(name)) {
-      if (clean) {
-        queriedTag.innerHTML = '';
-      }
-      hostNodes.push(queriedTag);
-    }
-  });
-  return hostNodes;
+    return hostNodes;
 };
 
 const _isReady = () => {
-  return (!document.attachEvent && document.readyState === 'interactive' || document.readyState === 'complete')
+    // eslint-disable-next-line
+    return (!document.attachEvent && document.readyState === 'interactive' || document.readyState === 'complete')
 }
 
 /**
@@ -102,23 +103,23 @@ const _isReady = () => {
  * and executed immeidatly if DOM is ready
  */
 let _render = (widget, hostElements, root) => {
-  hostElements.forEach(elm => {
-    let hostNode = elm;
-    let props = _propsToPassDown(elm) || {};
-    return Inferno.render(
-      h(widget, props),
-      hostNode,
-      root
-    );
+    hostElements.forEach(elm => {
+        let hostNode = elm;
+        let props = _propsToPassDown(elm) || {};
+        return Inferno.render(
+            h(widget, props),
+            hostNode,
+            root
+        );
 
-  });
+    });
 };
 
 export {
-  _propsToPassDown,
-  _hostDOMElms,
-  _getCurrentScriptTag,
-  _capitalize,
-  _isReady,
-  _render
+    _propsToPassDown,
+    _hostDOMElms,
+    _getCurrentScriptTag,
+    _capitalize,
+    _isReady,
+    _render
 };

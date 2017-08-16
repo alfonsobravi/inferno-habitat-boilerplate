@@ -14,7 +14,8 @@
     ],
     "types": [
       "inferno",
-      "node"
+      "node",
+      "jest"
     ],
     "jsx": "preserve",
     "noUnusedLocals": true,

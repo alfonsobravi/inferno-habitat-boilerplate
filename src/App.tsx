@@ -1,4 +1,7 @@
-import { linkEvent, version } from 'inferno';
+import {
+    linkEvent,
+    version
+} from 'inferno';
 import Component from 'inferno-component';
 
 import './App.css';
@@ -10,8 +13,10 @@ function handleClick(instance, event) {
 
 export default class App extends Component<any, any> {
 
-    constructor(public props,
-                public context) {
+    constructor(
+        public props,
+        public context
+    ) {
         super(props, context);
     }
 
@@ -19,9 +24,9 @@ export default class App extends Component<any, any> {
         return (
             <div className="App">
                 <div className="App-header">
-                    <Logo width="80" height="80"/>
+                    <Logo width="40" height="40"/>
                     <h1>Hello {this.props.name}!</h1>
-                    <h2>{`Welcome to Inferno v${version}`}</h2>
+                    <h2>{`Welcome to Inferno ${version}`}</h2>
                 </div>
                 <p className="App-intro">
                     To get started, edit <code>src/App.tsx</code> and save to reload.
