@@ -87,7 +87,7 @@ module.exports = {
     // https://github.com/infernojs/create-inferno-app/issues/290
     // `web` extension prefixes have been added for better support
     // for React Native Web.
-    extensions: ['.web.js', '.js', '.json', '.web.jsx', '.jsx'],
+    extensions: ['.web.js', '.js', '.json', '.web.jsx', '.jsx', '.tsx', '.ts'],
     alias: {
       react: 'inferno-compat',
       'react-dom': 'inferno-compat',
@@ -118,12 +118,19 @@ module.exports = {
           {
             options: {
               formatter: eslintFormatter,
-              
             },
             loader: require.resolve('eslint-loader'),
           },
         ],
         include: paths.appSrc,
+      },
+      {
+          test: /\.tsx?$/,                          // All ts and tsx files will be process by
+          loaders: [
+              'babel-loader',
+              'ts-loader'
+          ], // first babel-loader, then ts-loader
+          exclude: /node_modules/                   // ignore node_modules
       },
       // ** ADDING/UPDATING LOADERS **
       // The "file" loader handles all assets unless explicitly excluded.
@@ -138,6 +145,7 @@ module.exports = {
         exclude: [
           /\.html$/,
           /\.(js|jsx)$/,
+          /\.tsx?$/,
           /\.css$/,
           /\.json$/,
           /\.bmp$/,

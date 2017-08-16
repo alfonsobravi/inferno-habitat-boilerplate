@@ -5,7 +5,7 @@ import h from 'inferno-hyperscript'
  * Capitalize every letter after `-`
  * Used for props passed from host DOM element
  * @param  {String} str string
- * @return {String}     Capetalized string
+ * @return {String}     Capitalized string
  */
 const _capitalize = str => {
   return str.replace(/-([a-z])/ig, (all, letter) => {
@@ -106,8 +106,8 @@ let _render = (widget, hostElements, root) => {
     let hostNode = elm;
     let props = _propsToPassDown(elm) || {};
     return Inferno.render(
-      h(widget, props), 
-      hostNode, 
+      h(widget, props),
+      hostNode,
       root
     );
 

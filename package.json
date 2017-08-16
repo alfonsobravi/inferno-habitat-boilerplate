@@ -3,6 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "inferno": "^3.7.0",
+    "inferno-component": "^3.7.0",
+    "inferno-dev-utils": "^3.2.0",
+    "inferno-error-overlay": "^2.2.0",
+    "inferno-hyperscript": "^3.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.22",
     "autoprefixer": "7.1.2",
     "babel-core": "6.25.0",
     "babel-eslint": "7.2.3",
@@ -30,18 +38,17 @@
     "fs-extra": "4.0.0",
     "html-webpack-plugin": "2.29.0",
     "http-proxy-middleware": "0.17.4",
-    "inferno": "^3.7.0",
-    "inferno-component": "^3.7.0",
-    "inferno-dev-utils": "^3.2.0",
-    "inferno-error-overlay": "^2.2.0",
-    "inferno-hyperscript": "^3.7.0",
     "jest": "20.0.4",
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "^3.0.0",
     "postcss-loader": "2.0.6",
     "promise": "8.0.1",
+    "source-map-loader": "^0.2.1",
     "style-loader": "0.18.2",
     "sw-precache-webpack-plugin": "^0.11.4",
+    "ts-loader": "^2.1.0",
+    "tslint": "^5.4.3",
+    "typescript": "^2.3.4",
     "url-loader": "0.5.9",
     "webpack": "3.4.0",
     "webpack-dev-server": "2.6.1",
@@ -51,7 +58,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "lint": "tslint src/*.ts{,x} src/**/*.ts{,x}"
   },
   "jest": {
     "collectCoverageFrom": [
