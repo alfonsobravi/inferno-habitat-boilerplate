@@ -1,4 +1,4 @@
-import habitat from './lib/index.js';
+import habitat from './_inferno-habitat/index.js';
 
 function init() {
     console.log('HABITAT', typeof habitat, habitat);

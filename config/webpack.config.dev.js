@@ -125,7 +125,7 @@ module.exports = {
                 include: paths.appSrc,
             },
             {
-                test: /\.(ts|tsx)?$/,                          // All ts and tsx files will be process by
+                test: /\.(ts|tsx)$/,                          // All ts and tsx files will be process by
                 loaders: [
                     'babel-loader',
                     'ts-loader'
@@ -145,7 +145,7 @@ module.exports = {
                 exclude: [
                     /\.html$/,
                     /\.(js|jsx)$/,
-                    /\.tsx?$/,
+                    /\.(ts|tsx)$/,
                     /\.css$/,
                     /\.json$/,
                     /\.bmp$/,
