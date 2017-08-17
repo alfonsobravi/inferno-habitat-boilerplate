@@ -17,7 +17,7 @@ Compiles and packages `main.tsx` and `public/index.html`. Output in `/dist`.
 ```
 
 #### Bundle self contained component (habitat)
-Compiles as habitat bundle and packages `bundle.tsx` and `public/bundle.html`. Output in `/dist`.
+Compiles as habitat bundle and packages `bundle.tsx` and `public/bundle.html`. Output in `/bundle`.
 ```
 > npm run bundle
 ```
