@@ -4,7 +4,7 @@ import {
 } from 'inferno';
 import Component from 'inferno-component';
 
-import './App.css';
+import './App.scss';
 import Logo from './logo';
 
 function handleClick(instance, event) {

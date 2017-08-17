@@ -146,7 +146,7 @@ module.exports = {
                     /\.html$/,
                     /\.(js|jsx)$/,
                     /\.(ts|tsx)$/,
-                    /\.css$/,
+                    /\.scss$/,
                     /\.json$/,
                     /\.bmp$/,
                     /\.gif$/,
@@ -188,7 +188,7 @@ module.exports = {
             // In production, we use a plugin to extract that CSS to a file, but
             // in development "style" loader enables hot editing of CSS.
             {
-                test: /\.css$/,
+                test: /\.scss$/,
                 use: [
                     require.resolve('style-loader'),
                     {
@@ -217,6 +217,7 @@ module.exports = {
                             ],
                         },
                     },
+                    'sass-loader'
                 ],
             },
             // ** STOP ** Are you adding a new loader?
@@ -231,7 +232,7 @@ module.exports = {
         new InterpolateHtmlPlugin(env.raw),
         // Generates an `index.html` file with the <script> injected.
         new HtmlWebpackPlugin({
-            inject: false,
+            inject: true,
             template: paths.appHtml,
         }),
         // Add module names to factory functions so they appear in browser profiler.

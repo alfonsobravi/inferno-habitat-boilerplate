@@ -40,10 +40,12 @@
     "html-webpack-plugin": "2.29.0",
     "http-proxy-middleware": "0.17.4",
     "jest": "20.0.4",
+    "node-sass": "^4.5.0",
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "^3.0.0",
     "postcss-loader": "2.0.6",
     "promise": "8.0.1",
+    "sass-loader": "^6.0.3",
     "source-map-loader": "^0.2.1",
     "style-loader": "0.18.2",
     "sw-precache-webpack-plugin": "^0.11.4",
@@ -59,8 +61,9 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
+    "bundle": "node scripts/bundle.js",
     "test": "node scripts/test.js --env=jsdom --no-cache",
-    "lint": "tslint src/*.ts{,x} src/**/*.ts{,x}"
+    "lint:ts": "tslint src/*.ts{,x} src/**/*.ts{,x}"
   },
   "jest": {
     "collectCoverageFrom": [
