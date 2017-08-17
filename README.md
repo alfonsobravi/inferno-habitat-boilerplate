@@ -1,3 +1,4 @@
+# Inferno-Habitat boilerplate
 This project was bootstrapped with [Create Inferno App](https://github.com/infernojs/create-inferno-app) then ejected to expose all configuration files and allow customizations.
 
 Inferno-Habitat, at the moment, is a local dependency in `src/_inferno-habitat` until I manage to get a working npm package.
