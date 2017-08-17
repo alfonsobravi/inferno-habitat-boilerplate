@@ -15,12 +15,14 @@ Compiles and packages `main.tsx` and `public/index.html`. Output in `/dist`.
 ```
 > npm run build
 ```
+Consider installing `serve` to easily deploy the output folder.
 
 #### Bundle self contained component (habitat)
 Compiles as habitat bundle and packages `bundle.tsx` and `public/bundle.html`. Output in `/bundle`.
 ```
 > npm run bundle
 ```
+Consider installing `serve` to easily deploy the output folder.
 
 ### Extra (self explanatory)
 ```
