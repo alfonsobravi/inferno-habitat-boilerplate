@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
@@ -20,8 +20,18 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Inferno App</title>
-</head>
-<body>
-    <div id="app"></div>
-</body>
+      <link href="/static/css/main.css" rel="stylesheet">
+  </head>
+  <body>
+    <h2>Demo</h2>
+
+		<!-- that's how we embed the widget using habitat -->
+	  <div class="demo-box" id="widget-wrapper" data-prop-name="Luigi" data-prop-log="console.log">
+
+			<!-- THAT IS ALL YOU NEED -->
+			<script async src="/static/js/main.js" type="text/javascript"></script>
+
+	  </div>
+		<!-- //end that's how we embed the widget using habitat -->
+  </body>
 </html>

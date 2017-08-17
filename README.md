@@ -2,12 +2,40 @@ This project was bootstrapped with [Create Inferno App](https://github.com/infer
 
 Inferno-Habitat, at the moment, is a local dependency in `src/_inferno-habitat` until I manage to get a working npm package.
 
-## Work in Progress
+## Scripts
+
+#### Dev server
+Compiles and runs `main.tsx` and `public/index.html`.
+```
+> npm start
+```
+
+#### Build component
+Compiles and packages `main.tsx` and `public/index.html`. Output in `/dist`.
+```
+> npm run build
+```
+
+#### Bundle self contained component (habitat)
+Compiles as habitat bundle and packages `bundle.tsx` and `public/bundle.html`. Output in `/dist`.
+```
+> npm run bundle
+```
+
+### Extra (self explanatory)
+```
+> npm run lint:ts
+> npm run test
+```
+
+## To Do
 
 - Cleanup unnecessary files and configurations
+    - Abstract some webpack stuff into `webpack.common`
 
 - Add support for:
-    - SCSS
+    - Style linting
+    - ~~SCSS~~
     - ~~Typescript~~
 
 - Cleanup example component:
@@ -15,7 +43,7 @@ Inferno-Habitat, at the moment, is a local dependency in `src/_inferno-habitat` 
     - Include "output" props
 
 - Production build
-    - Split packages for self contained and embeddable (maybe this is NPM's job?)
+    - ~~Split packages for self contained and embeddable (maybe this is NPM's job?)~~
     - Packaging (NPM)?
 
 - ~~Fix Jest's `document.getElementById` issue~~
