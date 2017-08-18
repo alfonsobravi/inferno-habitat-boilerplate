@@ -7,7 +7,9 @@
     "inferno-component": "^3.7.0",
     "inferno-dev-utils": "^3.2.0",
     "inferno-error-overlay": "^2.2.0",
-    "inferno-hyperscript": "^3.7.0"
+    "inferno-hyperscript": "^3.7.0",
+    "stylelint": "^8.0.0",
+    "stylelint-scss": "^2.0.1"
   },
   "devDependencies": {
     "@types/jest": "^20.0.7",
@@ -48,6 +50,8 @@
     "sass-loader": "^6.0.3",
     "source-map-loader": "^0.2.1",
     "style-loader": "0.18.2",
+    "stylelint": "^8.0.0",
+    "stylelint-scss": "^2.0.1",
     "sw-precache-webpack-plugin": "^0.11.4",
     "ts-loader": "^2.1.0",
     "tslint": "^5.4.3",
@@ -63,7 +67,8 @@
     "build": "node scripts/build.js",
     "bundle": "node scripts/bundle.js",
     "test": "node scripts/test.js --env=jsdom --no-cache",
-    "lint:ts": "tslint src/*.ts{,x} src/**/*.ts{,x}"
+    "lint:ts": "tslint src/*.ts{,x} src/**/*.ts{,x}",
+    "lint:scss": "stylelint src/**/*.scss -c ./stylelint.config.js"
   },
   "jest": {
     "collectCoverageFrom": [

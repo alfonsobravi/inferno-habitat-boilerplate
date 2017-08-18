@@ -25,13 +25,13 @@ export default class App extends Component<any, any> {
             <div className="App">
                 <div className="App-header">
                     <Logo width="40" height="40"/>
-                    <h1>Hello, I am {this.props.name}!</h1>
+                    <h1>{`Hello, I am ${this.props.name}!`}</h1>
                     <h2>{`Welcome to Inferno ${version}`}</h2>
                 </div>
                 <p className="App-intro">
                     To get started, edit <code>src/App.tsx</code> and save to reload.
                     <br/>
-                    <button onClick={linkEvent(this, handleClick)}>Click me!</button>
+                    <button onClick={linkEvent(this, handleClick)}>Click me and check console!</button>
                 </p>
             </div>
         );
