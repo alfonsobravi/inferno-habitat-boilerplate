@@ -37,7 +37,7 @@ Consider installing `serve` to easily deploy the output folder.
     - Abstract some webpack stuff into `webpack.common`
 
 - Add support for:
-    - Style linting
+    - ~~Style linting~~
     - ~~SCSS~~
     - ~~Typescript~~
 
